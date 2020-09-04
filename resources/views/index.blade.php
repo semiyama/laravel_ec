@@ -4,6 +4,7 @@
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device=width, initial-scale=1, shrink-fit=no'>
   <meta name='csrf-token' content='{{ csrf_token() }}'>
+  <meta name="robots" content="noindex">
   <link href="{{ asset('/css/reset.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/common.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
@@ -30,31 +31,17 @@
     {{-- 新着商品 --}}
     <section class="newItem">
       <h2>新着商品</h2>
-      <div class="ibParent">
-        <a href="" class="itemBtn">SAMPLE</a>
-        <a href="" class="itemBtn">SAMPLE</a>
-        <a href="" class="itemBtn">SAMPLE</a>
-        <a href="" class="itemBtn">SAMPLE</a>
+      <div class="ibParent itemBtnBox">
+        @foreach($items as $item)
+          <a href="" class="itemBtn">
+            <div>SAMPLE</div>
+            <div>
+              {{ $item->name }} ({{ $item->item_category->name }})
+            </div>
+          </a>
+        @endforeach
       </div>
     </section>
   </div>
-
-
-  <table>
-
-  {{--
-  @foreach($items as $item)
-  <tr>
-    <td>{{ $item->name }}</td>
-    <td>
-      <a href="">
-        {{ $item->name }}
-      </a>
-    </td>
-    <td>カテゴリ番号{{ $item->category }}</td>
-  </tr>
-  @endforeach
-  --}}
-</table>
 </body>
 </html>

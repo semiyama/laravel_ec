@@ -69,6 +69,10 @@ header nav a {
   margin-bottom: 10px;
 }
 
+.newItem .itemBtnBox {
+  text-align: left;
+}
+
 .newItem .itemBtn {
   display: inline-block;
   width: 150px;
@@ -77,12 +81,25 @@ header nav a {
   font-weight: bold;
   color: #999999;
   background: #fefefe;
-  border: 1px solid #ccc;
   font-size: 20px;
   text-decoration: none;
+  vertical-align: top;
+  text-align: center;
 }
 
-.newItem .itemBtn:last-child {
+.newItem .itemBtn div:first-child {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ccc;
+}
+
+.newItem .itemBtn div:nth-child(2) {
+  font-size: 12px;
+  line-height: normal;
+  text-align: left;
+}
+
+.newItem .itemBtn:nth-child(4n) {
   margin-right: 0;
 }
 

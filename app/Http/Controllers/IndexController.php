@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Items;
+use App\Item_category;
+
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -26,6 +28,11 @@ class IndexController extends Controller
     {
 
         $items = Items::all();
+        dump($items);
+
+        //$itemCategories = Item_category::all();
+        //dump($itemCategories);
+
         return view('index', ['items' => $items]);
     }
 }

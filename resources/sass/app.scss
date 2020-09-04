@@ -67,6 +67,10 @@ header{
     margin-bottom:10px;
   }
 
+  .itemBtnBox{
+    text-align: left;
+  }
+
   .itemBtn{
     display: inline-block;
     width:150px;
@@ -75,12 +79,25 @@ header{
     font-weight: bold;
     color:#999999;
     background: #fefefe;
-    border:1px solid #ccc;
     font-size:20px;
     text-decoration: none;
+    vertical-align: top;
+    text-align: center;
+
+    div:first-child{
+      width:150px;
+      height:150px;
+      border:1px solid #ccc;
+    }
+
+    div:nth-child(2){
+      font-size:12px;
+      line-height: normal;
+      text-align: left;
+    }
   }
 
-  .itemBtn:last-child{
+  .itemBtn:nth-child(4n){
     margin-right:0
   }
 
