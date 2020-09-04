@@ -20,3 +20,6 @@ Route::get('/', function () {
 */
 
 Route::get('/', 'IndexController@index')->name('index');
+
+//商品カテゴリページ
+Route::get('/category/{id}', 'ItemCategoryController@show')->name('category');

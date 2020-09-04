@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\item_category;
+use App\Item_category;
 use Illuminate\Http\Request;
 
 class ItemCategoryController extends Controller
@@ -44,9 +44,12 @@ class ItemCategoryController extends Controller
      * @param  \App\item_category  $item_category
      * @return \Illuminate\Http\Response
      */
-    public function show(item_category $item_category)
+    public function show(Request $request, $id, item_category $item_category)
     {
-        //
+      $categoryItems = Item_category::find($id);
+      dump($categoryItems->items);
+
+      return view('category', ['items' => $categoryItems]);
     }
 
     /**

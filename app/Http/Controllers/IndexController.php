@@ -28,10 +28,6 @@ class IndexController extends Controller
     {
 
         $items = Items::all();
-        dump($items);
-
-        //$itemCategories = Item_category::all();
-        //dump($itemCategories);
 
         return view('index', ['items' => $items]);
     }
