@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* メイン */
+
+.main {
+  width: 720px;
+  margin: 0 auto;
+}
+
+/* カテゴリーから探す */
+
+.category {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.category h2 {
+  font-size: 26px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.category .categoryBtn {
+  display: inline-block;
+  width: 200px;
+  margin-right: 60px;
+  color: #000;
+  background: #ded9d4;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.category .categoryBtn:last-child {
+  margin-right: 0;
+}
+
+.category .categoryBtn img {
+  width: 100%;
+}
+
+.category .categoryBtn:hover {
+  opacity: 0.7;
+}
+
+/* 新着商品 */
+
+.newItem {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.newItem h2 {
+  font-size: 26px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.newItem .itemBtnBox {
+  text-align: left;
+}
+
+.newItem .itemBtn {
+  display: inline-block;
+  width: 150px;
+  line-height: 150px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #999999;
+  background: #fefefe;
+  font-size: 20px;
+  text-decoration: none;
+  vertical-align: top;
+  text-align: center;
+}
+
+.newItem .itemBtn img {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+
+.newItem .itemBtn div {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: normal;
+  text-align: left;
+}
+
+.newItem .itemBtn:nth-child(4n) {
+  margin-right: 0;
+}
+
+.newItem .itemBtn:hover {
+  opacity: 0.7;
+}
+
