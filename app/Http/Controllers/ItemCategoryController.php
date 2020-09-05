@@ -48,7 +48,7 @@ class ItemCategoryController extends Controller
     {
       $category = Item_category::find($id);
 
-      //return view('category', ['items' => $category->Items]);
+      return view('category', ['items' => $category->Items]);
     }
 
     /**

@@ -34,7 +34,7 @@
           {{--中央ブロック--}}
           <div class="center">
             <h2>{{$item->name}}</h2>
-            <div class="text">大人気少年漫画の第三巻！</div>
+            <div class="text">{{$item->description}}</div>
           </div>
           {{--右ブロック--}}
           <div class="right">
