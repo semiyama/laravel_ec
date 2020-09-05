@@ -46,10 +46,9 @@ class ItemCategoryController extends Controller
      */
     public function show(Request $request, $id, item_category $item_category)
     {
-      $categoryItems = Item_category::find($id);
-      dump($categoryItems->items);
+      $category = Item_category::find($id);
 
-      return view('category', ['items' => $categoryItems]);
+      //return view('category', ['items' => $category->Items]);
     }
 
     /**

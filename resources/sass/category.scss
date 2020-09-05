@@ -19,92 +19,72 @@ header{
 
 /* メイン */
 .main{
-  width:720px;
+  width:1000px;
   margin:0 auto;
 }
 
-/* カテゴリーから探す */
-.category{
-  text-align:center;
-  margin-top:60px;
-
-  h2{
-    font-size:26px;
-    text-align: left;
-    margin-bottom:10px;
-  }
-
-  .categoryBtn{
-    display: inline-block;
-    width:200px;
-    margin-right:60px;
-    color:#000;
-    background: #ded9d4;
-    font-size:20px;
-    text-decoration: none;
-  }
-
-  .categoryBtn:last-child{
-    margin-right:0
-  }
-
-  .categoryBtn img{
-    width:100%
-  }
-
-  .categoryBtn:hover{
-    opacity: 0.7
-  }
-}
-
-/* 新商品 */
-.newItem{
-  text-align:center;
+/* アイテム一覧 */
+.itemList{
   margin-top:100px;
 
-  h2{
-    font-size:26px;
-    text-align: left;
-    margin-bottom:10px;
-  }
+  section{
+    padding:20px 0;
+    border-bottom:1px solid #ddd;
 
-  .itemBtnBox{
-    text-align: left;
-  }
-
-  .itemBtn{
-    display: inline-block;
-    width:150px;
-    line-height:150px;
-    margin-right:40px;
-    margin-bottom:50px;
-    font-weight: bold;
-    color:#999999;
-    background: #fefefe;
-    font-size:20px;
-    text-decoration: none;
-    vertical-align: top;
-    text-align: center;
-
-    div:first-child{
+    .left{
       width:150px;
-      height:150px;
-      border:1px solid #ccc;
+      display: inline-block;
+      vertical-align: top;
+
+      img{
+        width:100%;
+      }
     }
 
-    div:nth-child(2){
-      margin-top:5px;
-      font-size:12px;
-      line-height: normal;
-      text-align: left;
+    .center{
+      width:630px;
+      display: inline-block;
+      vertical-align: top;
+      padding-left:20px;
+
+      h2{
+        font-size:2.0rem;
+        font-weight: bold;
+      }
+
+      .text{
+        font-size:1.3rem;
+        margin-top:10px;
+      }
     }
-  }
 
-  .itemBtn:nth-child(4n){
-    margin-right:0
-  }
+    .right{
+      width:220px;
+      padding:30px 10px;
+      display: inline-block;
+      vertical-align: top;
+      background:#f8f4ef;
+      border-radius: 3px;
 
-  .itemBtn:hover{
-    opacity: 0.7
+      .price{
+        color:#F50101;
+        text-align: center;
+        font-size:1.3rem;
+        font-weight: bold;
+      }
+
+      a{
+        display: block;
+        margin:0 auto;
+        margin-top:10px;
+        color:#fff;
+        text-align: center;
+        background: #de8639;
+        border-radius: 3px;
+        font-size:1.4rem;
+        padding:10px;
+        text-decoration: none;
+      }
+    }
   }
 }

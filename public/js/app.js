@@ -65881,17 +65881,6 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/sass/category.scss":
 /*!**************************************!*\
   !*** ./resources/sass/category.scss ***!
@@ -65903,15 +65892,38 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/sass/common.scss":
+/*!************************************!*\
+  !*** ./resources/sass/common.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/index.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/index.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/category.scss ***!
-  \********************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/common.scss ./resources/sass/index.scss ./resources/sass/category.scss ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\common.scss */"./resources/sass/common.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\index.scss */"./resources/sass/index.scss");
 module.exports = __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\category.scss */"./resources/sass/category.scss");
 
 

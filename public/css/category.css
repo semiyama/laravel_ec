@@ -17,95 +17,74 @@ header nav a {
 /* メイン */
 
 .main {
-  width: 720px;
+  width: 1000px;
   margin: 0 auto;
 }
 
-/* カテゴリーから探す */
+/* アイテム一覧 */
 
-.category {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.category h2 {
-  font-size: 26px;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.category .categoryBtn {
-  display: inline-block;
-  width: 200px;
-  margin-right: 60px;
-  color: #000;
-  background: #ded9d4;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.category .categoryBtn:last-child {
-  margin-right: 0;
-}
-
-.category .categoryBtn img {
-  width: 100%;
-}
-
-.category .categoryBtn:hover {
-  opacity: 0.7;
-}
-
-/* 新商品 */
-
-.newItem {
-  text-align: center;
+.itemList {
   margin-top: 100px;
 }
 
-.newItem h2 {
-  font-size: 26px;
-  text-align: left;
-  margin-bottom: 10px;
+.itemList section {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.newItem .itemBtnBox {
-  text-align: left;
-}
-
-.newItem .itemBtn {
+.itemList section .left {
+  width: 150px;
   display: inline-block;
-  width: 150px;
-  line-height: 150px;
-  margin-right: 40px;
-  margin-bottom: 50px;
-  font-weight: bold;
-  color: #999999;
-  background: #fefefe;
-  font-size: 20px;
-  text-decoration: none;
   vertical-align: top;
+}
+
+.itemList section .left img {
+  width: 100%;
+}
+
+.itemList section .center {
+  width: 630px;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+.itemList section .center h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.itemList section .center .text {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.itemList section .right {
+  width: 220px;
+  padding: 30px 10px;
+  display: inline-block;
+  vertical-align: top;
+  background: #f8f4ef;
+  border-radius: 3px;
+}
+
+.itemList section .right .price {
+  color: #F50101;
   text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.newItem .itemBtn div:first-child {
-  width: 150px;
-  height: 150px;
-  border: 1px solid #ccc;
-}
-
-.newItem .itemBtn div:nth-child(2) {
-  margin-top: 5px;
-  font-size: 12px;
-  line-height: normal;
-  text-align: left;
-}
-
-.newItem .itemBtn:nth-child(4n) {
-  margin-right: 0;
-}
-
-.newItem .itemBtn:hover {
-  opacity: 0.7;
+.itemList section .right a {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  background: #de8639;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  padding: 10px;
+  text-decoration: none;
 }
 

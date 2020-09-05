@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset='utf-8'>
-  <meta name='viewport' content='width=device=width, initial-scale=1, shrink-fit=no'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
   <meta name='csrf-token' content='{{ csrf_token() }}'>
   <meta name="robots" content="noindex">
   <link href="{{ asset('/css/reset.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/common.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('/css/category.css') }}" rel="stylesheet">
   <title>テストECサイト</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/"><h1>Laravel サンプルECサイト</h1></a>
-    </nav>
-  </header>
+  @include('header')
+
+  <div class="h1Box"><h1>商品カテゴリ</h1></div>
+
 
   <div class="main">
-    {{-- カテゴリから探す --}}
-    <section class="category">
-      <h2>カテゴリから探す</h2>
-      <div class="ibParent">
-        <a href="" class="categoryBtn"><img src="{{ asset('/images/banner_book.jpg') }}"></a>
-        <a href="" class="categoryBtn"><img src="{{ asset('/images/banner_cd.jpg') }}"></a>
-        <a href="" class="categoryBtn"><img src="{{ asset('/images/banner_bluray.jpg') }}"></a>
-      </div>
-    </section>
+    <div class="breadCrumb">
+      <a href="/">TOPページ</a> ＞ 商品カテゴリページ
+    </div>
 
-    {{-- 新着商品 --}}
-    <section class="newItem">
-      <h2>新着商品</h2>
-      <div class="ibParent itemBtnBox">
-        {{--
-        @foreach($items as $item)
-          <a href="" class="itemBtn">
-            <div>SAMPLE</div>
-            <div>
-              {{ $item->name }} ({{ $item->item_category->name }})
-            </div>
-          </a>
-        @endforeach
-        --}}
-      </div>
-    </section>
+    <div class="itemList">
+
+
+      @foreach($items as $item)
+        {{--商品--}}
+        <section class="ibParent">
+          {{--左ブロック(商品画像)--}}
+          <div class="left">
+            <img src="{{ asset('/images/sample.jpg') }}">
+          </div>
+          {{--中央ブロック--}}
+          <div class="center">
+            <h2>{{$item->name}}</h2>
+            <div class="text">大人気少年漫画の第三巻！</div>
+          </div>
+          {{--右ブロック--}}
+          <div class="right">
+            <div class="price">&yen; {{ number_format($item->price) }}（税込）</div>
+            <a href="">詳細を見る</a>
+          </div>
+        </section>
+      @endforeach
+
+
+
+    </div>
   </div>
+
+
+
 </body>
 </html>
