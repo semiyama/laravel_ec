@@ -1,24 +1,17 @@
 @charset "UTF-8";
 
-header nav {
-  width: 100%;
-  line-height: 100px;
-  background: url("/images/header.jpg");
-  font-size: 40px;
-  text-align: center;
-  color: #161616;
-}
-
-header nav a {
-  color: #000;
-  text-decoration: none;
-}
-
 /* メイン */
 
 .main {
   width: 1000px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+    padding: 30px;
+  }
 }
 
 /* アイテム一覧 */
@@ -86,5 +79,35 @@ header nav a {
   font-size: 1.4rem;
   padding: 10px;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .itemList section .left {
+    width: 20%;
+  }
+
+  .itemList section .center {
+    width: 60%;
+  }
+
+  .itemList section .right {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .itemList section .left {
+    width: 30%;
+  }
+
+  .itemList section .center {
+    width: 70%;
+  }
+
+  .itemList section .right {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+  }
 }
 

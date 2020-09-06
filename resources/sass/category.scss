@@ -1,26 +1,15 @@
 @charset "UTF-8";
-
-header{
-  nav{
-    width:100%;
-    line-height: 100px;
-    background:url('/images/header.jpg');
-    font-size:40px;
-    text-align: center;
-    color:#161616;
-
-    a{
-      color:#000;
-      text-decoration: none;
-
-    }
-  }
-}
+@import "import";
 
 /* メイン */
 .main{
-  width:1000px;
+  width:$basicMainWidth;
   margin:0 auto;
+
+  @include mq(xl) {
+      width:100%;
+      padding:30px;
+  }
 }
 
 /* アイテム一覧 */
@@ -84,6 +73,32 @@ header{
         font-size:1.4rem;
         padding:10px;
         text-decoration: none;
+      }
+    }
+
+    @include mq(xl) {
+        .left{
+          width:20%;
+        }
+        .center{
+          width:60%;
+        }
+        .right{
+          width:20%;
+        }
+    }
+
+    @include mq(md) {
+      .left{
+        width:30%;
+      }
+      .center{
+        width:70%;
+      }
+      .right{
+        width:100%;
+        display: block;
+        margin-top:20px;
       }
     }
   }

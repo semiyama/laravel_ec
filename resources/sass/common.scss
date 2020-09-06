@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "mixin";
+@import "import";
 
 html {
     box-sizing: border-box;
@@ -62,7 +62,7 @@ header{
   font-size:1.2rem;
 
   a{
-    color:#666;
+    color:#56b1d4;
     text-decoration: none;
   }
 }
