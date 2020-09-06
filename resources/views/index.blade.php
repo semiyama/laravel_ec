@@ -8,35 +8,33 @@
   <link href="{{ asset('/css/reset.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/common.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
-  <title>テストECサイト</title>
+  <title>Laravel サンプルECサイト</title>
 </head>
 <body>
   @include('header')
 
-  <div class="h1Box"><h1>ECサイトTOP</h1></div>
-
   <div class="main">
-    {{-- カテゴリから探す --}}
+    <!-- カテゴリから探す -->
     <section class="category">
       <h2>カテゴリから探す</h2>
       <div class="ibParent">
-        <a href="/category/1" class="categoryBtn"><img src="{{ asset('/images/banner_book.jpg') }}"></a>
-        <a href="/category/2" class="categoryBtn"><img src="{{ asset('/images/banner_cd.jpg') }}"></a>
-        <a href="/category/3" class="categoryBtn"><img src="{{ asset('/images/banner_bluray.jpg') }}"></a>
+        <a href="/products/category/1" class="categoryBtn"><img src="{{ asset('/images/banner_book.jpg') }}"></a>
+        <a href="/products/category/2" class="categoryBtn"><img src="{{ asset('/images/banner_cd.jpg') }}"></a>
+        <a href="/products/category/3" class="categoryBtn"><img src="{{ asset('/images/banner_bluray.jpg') }}"></a>
       </div>
     </section>
 
-    {{-- 新着商品 --}}
+    <!-- 新着商品 -->
     <section class="newItem">
       <h2>新着商品</h2>
       <div class="ibParent itemBtnBox">
         @foreach($items as $item)
-          <a href="" class="itemBtn">
-            <img src="{{ asset('/images/sample.jpg') }}">
+          <section class="itemBtn">
+            <a href="/products/detail/{{ $item->id }}"><img src="{{ asset('/images/sample.jpg') }}"></a>
             <div>
-              {{ $item->name }} ({{ $item->item_category->name }})
+              <a href=""><h3>{{ $item->name }}</h3></a> (<a href="/products/category/{{ $item->item_category->id }}">{{ $item->item_category->name }}</a>)
             </div>
-          </a>
+          </section>
         @endforeach
       </div>
     </section>

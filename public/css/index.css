@@ -23,7 +23,7 @@
 }
 
 .category h2 {
-  font-size: 26px;
+  font-size: 2.6rem;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -34,7 +34,7 @@
   margin-right: 60px;
   color: #000;
   background: #ded9d4;
-  font-size: 20px;
+  font-size: 2rem;
   text-decoration: none;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .newItem h2 {
-  font-size: 26px;
+  font-size: 2.6rem;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -82,7 +82,7 @@
   font-weight: bold;
   color: #999999;
   background: #fefefe;
-  font-size: 20px;
+  font-size: 2rem;
   text-decoration: none;
   vertical-align: top;
   text-align: center;
@@ -94,13 +94,23 @@
 
 .newItem .itemBtn div {
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 1.2rem;
   line-height: normal;
   text-align: left;
 }
 
-.newItem .itemBtn:hover {
+.newItem .itemBtn a:hover,
+.newItem .itemBtn a:hover h3 {
   opacity: 0.7;
+}
+
+.newItem .itemBtn a {
+  text-decoration: none;
+}
+
+.newItem .itemBtn h3 {
+  display: inline;
+  color: #666;
 }
 
 @media screen and (max-width: 1000px) {

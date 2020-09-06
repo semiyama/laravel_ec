@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/* メイン */
+
+.main {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+/* 商品詳細 */
+
+.item {
+  margin-top: 30px;
+  /* 左ブロック */
+  /* 右ブロック */
+}
+
+.item .left {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.item .left img {
+  width: 100%;
+}
+
+.item .right {
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+  /* フォーム */
+}
+
+.item .right h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.item .right p.description {
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+
+.item .right .price {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #F50101;
+}
+
+.item .right form button {
+  color: #fff;
+  text-align: center;
+  background: #fb9841;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
+

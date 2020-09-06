@@ -22,4 +22,7 @@ Route::get('/', function () {
 Route::get('/', 'IndexController@index')->name('index');
 
 //商品カテゴリページ
-Route::get('/category/{id}', 'ItemCategoryController@show')->name('category');
+Route::get('/products/category/{id}', 'ItemController@list')->name('category');
+
+//商品カテゴリページ
+Route::get('/products/detail/{id}', 'ItemController@detail')->name('detail');

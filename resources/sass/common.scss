@@ -32,7 +32,7 @@ body {
 
 .h1Box{
   padding:10px;
-  font-size:13px
+  font-size:1.3rem
 }
 
 header{
@@ -40,7 +40,7 @@ header{
     width:100%;
     line-height: 100px;
     background:url('/images/header.jpg');
-    font-size:40px;
+    font-size:4.0rem;
     text-align: center;
     color:#161616;
 
@@ -59,10 +59,24 @@ header{
 
 /* パンくず */
 .breadCrumb{
+  margin-top:20px;
   font-size:1.2rem;
+
+  h1{
+    display: inline;
+  }
 
   a{
     color:#56b1d4;
     text-decoration: none;
   }
+}
+
+/* フッター */
+footer{
+  background: #f6f6f6;
+  padding:30px;
+  color:#666666;
+  text-align: center;
+  font-size:1.3rem;
 }

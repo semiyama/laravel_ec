@@ -7,6 +7,11 @@
   margin: 0 auto;
 }
 
+.main h1 {
+  font-size: 2.4rem;
+  margin-top: 30px;
+}
+
 @media screen and (max-width: 1000px) {
   .main {
     width: 100%;
@@ -17,12 +22,16 @@
 /* アイテム一覧 */
 
 .itemList {
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .itemList section {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
+}
+
+.itemList section a:hover {
+  opacity: 0.7;
 }
 
 .itemList section .left {
@@ -45,6 +54,11 @@
 .itemList section .center h2 {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.itemList section .center h2 a {
+  text-decoration: none;
+  color: #333;
 }
 
 .itemList section .center .text {
@@ -74,7 +88,7 @@
   margin-top: 10px;
   color: #fff;
   text-align: center;
-  background: #de8639;
+  background: #fb9841;
   border-radius: 3px;
   font-size: 1.4rem;
   padding: 10px;

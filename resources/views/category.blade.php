@@ -8,48 +8,40 @@
   <link href="{{ asset('/css/reset.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/common.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/category.css') }}" rel="stylesheet">
-  <title>テストECサイト</title>
+  <title>{{ $category->name }}の一覧｜Laravel サンプルECサイト</title>
 </head>
 <body>
   @include('header')
 
-  <div class="h1Box"><h1>商品カテゴリ</h1></div>
-
-
   <div class="main">
     <div class="breadCrumb">
-      <a href="/">TOPページ</a> ＞ 商品カテゴリページ
+      <a href="/">TOPページ</a> ＞ {{ $category->name }}の一覧
     </div>
 
+    <h1>{{ $category->name }}の一覧</h1>
+
+    <!-- 商品一覧 -->
     <div class="itemList">
-
-
       @foreach($items as $item)
         {{--商品--}}
         <section class="ibParent">
           {{--左ブロック(商品画像)--}}
           <div class="left">
-            <img src="{{ asset('/images/sample.jpg') }}">
+            <a href="/products/detail/{{$item->id}}"><img src="{{ asset('/images/sample.jpg') }}" alt="{{$item->name}}"></a>
           </div>
           {{--中央ブロック--}}
           <div class="center">
-            <h2>{{$item->name}}</h2>
+            <h2><a href="/products/detail/{{$item->id}}">{{$item->name}}</a></h2>
             <div class="text">{{$item->description}}</div>
           </div>
           {{--右ブロック--}}
           <div class="right">
             <div class="price">&yen; {{ number_format($item->price) }}（税込）</div>
-            <a href="">詳細を見る</a>
+            <a href="/products/detail/{{$item->id}}">詳細を見る</a>
           </div>
         </section>
       @endforeach
-
-
-
     </div>
   </div>
-
-
-
 </body>
 </html>
