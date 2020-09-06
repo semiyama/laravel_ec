@@ -1,9 +1,17 @@
 @charset "UTF-8";
+@import "mixin";
+
 
 /* メイン */
 .main{
-  width:720px;
+  width:1000px;
   margin:0 auto;
+
+  @include mq(xl) {
+      width:100%;
+      padding:30px;
+  }
+
 }
 
 /* カテゴリーから探す */
@@ -38,6 +46,14 @@
   .categoryBtn:hover{
     opacity: 0.7
   }
+
+  @include mq(md) {
+      .categoryBtn{
+        width:100%;
+        margin:0;
+        margin-bottom:20px;
+      }
+  }
 }
 
 /* 新着商品 */
@@ -57,10 +73,8 @@
 
   .itemBtn{
     display: inline-block;
-    width:150px;
-    line-height:150px;
-    margin-right:40px;
-    margin-bottom:50px;
+    width:25%;
+    padding:20px;
     font-weight: bold;
     color:#999999;
     background: #fefefe;
@@ -70,9 +84,7 @@
     text-align: center;
 
     img{
-      display: block;
-      width:150px;
-      height:150px;
+      width:100%;
     }
 
     div{
@@ -83,11 +95,13 @@
     }
   }
 
-  .itemBtn:nth-child(4n){
-    margin-right:0
-  }
-
   .itemBtn:hover{
     opacity: 0.7
+  }
+
+  @include mq(xl) {
+    .itemBtn{
+      width:50%;
+    }
   }
 }
