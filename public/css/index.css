@@ -5,6 +5,7 @@
 .main {
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 100px;
 }
 
 @media screen and (max-width: 1000px) {
