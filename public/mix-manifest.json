@@ -3,5 +3,7 @@
     "/css/common.css": "/css/common.css",
     "/css/index.css": "/css/index.css",
     "/css/category.css": "/css/category.css",
-    "/css/detail.css": "/css/detail.css"
+    "/css/detail.css": "/css/detail.css",
+    "/css/cart.css": "/css/cart.css",
+    "/css/order.css": "/css/order.css"
 }

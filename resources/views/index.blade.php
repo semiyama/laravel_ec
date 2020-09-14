@@ -32,7 +32,8 @@
           <section class="itemBtn">
             <a href="/products/detail/{{ $item->id }}"><img src="{{ asset('/images/sample.jpg') }}"></a>
             <div>
-              <a href=""><h3>{{ $item->name }}</h3></a> (<a href="/products/category/{{ $item->item_category->id }}">{{ $item->item_category->name }}</a>)
+              <a href="/products/detail/{{ $item->id }}"><h3>{{ $item->name }}</h3></a>
+               (<a href="/products/category/{{ $item->item_category->id }}">{{ $item->item_category->name }}</a>)
             </div>
           </section>
         @endforeach

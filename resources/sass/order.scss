@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@import "import";
+@import "order_flow";
+
+/* メイン */
+.main{
+  width:$basicMainWidth;
+  margin:0 auto;
+  padding-bottom:100px;
+
+  @include mq(xl) {
+      width:100%;
+      padding:30px;
+  }
+}
+
+.topText{
+  margin-top:50px;
+  padding-bottom:5px;
+  font-size:1.8rem;
+  font-weight: bold;
+  border-bottom:1px solid #ddd;
+}
+
+/* 進捗状況 */
+.flow{
+  width:600px;
+  margin:0 auto;
+  margin-top:50px;
+  margin-bottom:70px;
+  position: relative;
+
+  &:before{
+    content: "";
+    width: 75%;
+    height: 4px;
+    background: #bfbab0;
+    position: absolute;
+    top: 20px;
+    left: 12.5%;
+    margin: 0;
+    border-radius: 2px;
+    z-index: -1;
+  }
+
+  li{
+    display: inline-block;
+    vertical-align: top;
+    width:25%;
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: bold;
+
+    span:first-child{
+      display: block;
+      margin:0 auto;
+      width:42px;
+      height:42px;
+      line-height:42px;
+      border-radius: 100px;
+      background: #7e7973;
+      color:#fff;
+      text-align:center;
+      font-size:2.4rem;
+      font-weight: bold;
+    }
+
+    span.text{
+      display: block;
+      margin-top:10px;
+      font-size:1.8rem;
+      font-weight: bold;
+      color:#645D52;
+    }
+
+    &.active{
+      span:first-child{
+        background: #6faf77;
+      }
+
+      span.text{
+        color:#6FAF77
+      }
+    }
+  }
+}
+
+/* ユーザー情報入力フォーム */
+.orderForm{
+  padding-bottom:10px;
+  border-bottom:1px solid #ddd;
+
+  table{
+    width:90%;
+    margin:0 auto;
+
+    tr{
+      border-top:solid #ddd 1px;
+    }
+
+    th{
+      width:30%;
+      color:#5B5757;
+      font-size:1.6rem;
+      font-weight: bold;
+      text-align: right;
+      padding:20px;
+      padding-right:0;
+    }
+
+    td{
+      text-align: left;
+      padding:20px;
+      font-size:1.6rem;
+
+      input,select{
+        border: 1px solid #999;
+        border-radius: 3px;
+        height: 40px;
+        padding:5px;
+      }
+    }
+
+    .zip{
+      margin-left:5px;
+    }
+  }
+}
+
+
+.inputBtn{
+  display: block;
+  color: #fff;
+  text-align: center;
+  background: #fb9841;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  margin:0 auto;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
+
+.backBtn{
+  display: block;
+  color: #fff;
+  text-align: center;
+  background: #979492;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  margin:0 auto;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+}

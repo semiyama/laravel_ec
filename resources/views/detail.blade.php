@@ -15,11 +15,11 @@
 
   <div class="main">
     <div class="breadCrumb">
-      <a href="/">TOPページ</a> ＞ <h1>{{ $item->name }}</h1>
+      <a href="/">TOPページ</a> ＞ <a href="/products/category/{{$item->item_category->id}}">{{ $item->item_category->name }}</a> ＞ <h1>{{ $item->name }}</h1>
     </div>
 
     <div class="main">
-      <div class="item ibParent">
+      <section class="item ibParent">
         <!-- 左ブロック -->
         <div class="left">
           <img src="{{ asset('/images/sample.jpg') }}" alt="{{$item->name}}">
@@ -35,7 +35,7 @@
             <button>カゴに入れる</button>
           </form>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </body>

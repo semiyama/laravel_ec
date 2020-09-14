@@ -1,15 +1,11 @@
 @charset "UTF-8";
 @import "import";
+@import "order_flow";
 
 /* メイン */
 .main{
   width:$basicMainWidth;
   margin:0 auto;
-
-  h1{
-    font-size:2.4rem;
-    margin-top:30px
-  }
 
   @include mq(xl) {
       width:100%;
@@ -17,12 +13,26 @@
   }
 }
 
-@charset "UTF-8";
-@import "import";
+.topText{
+  margin-top:50px;
+  padding-bottom:5px;
+  font-size:1.8rem;
+  font-weight: bold;
+  border-bottom:1px solid #ddd;
+}
 
 /* アイテム一覧 */
 .itemList{
   margin-top:30px;
+
+  .delete{
+    color:#134DA2;
+    font-size:1.2rem;
+  }
+
+  .text{
+    margin-bottom:10px;
+  }
 
   section{
     padding:20px 0;
@@ -42,13 +52,13 @@
       }
     }
 
-    .center{
+    .right{
       width:630px;
       display: inline-block;
       vertical-align: top;
       padding-left:20px;
 
-      h2{
+      h3{
         font-size:2.0rem;
         font-weight: bold;
 
@@ -62,36 +72,16 @@
         font-size:1.3rem;
         margin-top:10px;
       }
-    }
-
-    .right{
-      width:220px;
-      padding:30px 10px;
-      display: inline-block;
-      vertical-align: top;
-      background:#f8f4ef;
-      border-radius: 3px;
 
       .price{
         color:#F50101;
-        text-align: center;
-        font-size:1.3rem;
+        text-align: left;
+        font-size:1.6rem;
         font-weight: bold;
-      }
-
-      a{
-        display: block;
-        margin:0 auto;
-        margin-top:10px;
-        color:#fff;
-        text-align: center;
-        background: #fb9841;
-        border-radius: 3px;
-        font-size:1.4rem;
-        padding:10px;
-        text-decoration: none;
+        margin-bottom:10px;
       }
     }
+
 
     @include mq(xl) {
         .left{
@@ -119,4 +109,28 @@
       }
     }
   }
+}
+
+/* 合計金額 */
+.totalPrice{
+  color:#F50101;
+  text-align: right;
+  font-size:1.6rem;
+  font-weight: bold;
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.inputBtn{
+  display: block;
+  color: #fff;
+  text-align: center;
+  background: #fb9841;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  margin:0 auto;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
 }

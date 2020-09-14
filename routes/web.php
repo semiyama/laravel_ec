@@ -26,3 +26,15 @@ Route::get('/products/category/{id}', 'ItemController@list')->name('category');
 
 //商品カテゴリページ
 Route::get('/products/detail/{id}', 'ItemController@detail')->name('detail');
+
+//カート
+Route::get('/cart', 'CartController@cart')->name('cart');
+
+//注文フォーム
+Route::get('/order', 'CartController@orderForm')->name('order');
+
+//注文内容の確認
+Route::get('/order/check', 'CartController@orderCheck')->name('order_check');
+
+//注文内容の確認
+Route::get('/order/comp', 'CartController@orderComp')->name('order_comp');

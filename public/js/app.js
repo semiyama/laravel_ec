@@ -65881,6 +65881,17 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/sass/cart.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/cart.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/category.scss":
 /*!**************************************!*\
   !*** ./resources/sass/category.scss ***!
@@ -65925,10 +65936,21 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/sass/order.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/order.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!********************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/common.scss ./resources/sass/index.scss ./resources/sass/category.scss ./resources/sass/detail.scss ***!
-  \********************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/common.scss ./resources/sass/index.scss ./resources/sass/category.scss ./resources/sass/detail.scss ./resources/sass/cart.scss ./resources/sass/order.scss ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65936,7 +65958,9 @@ __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\js\app.js */"
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\common.scss */"./resources/sass/common.scss");
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\index.scss */"./resources/sass/index.scss");
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\category.scss */"./resources/sass/category.scss");
-module.exports = __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\detail.scss */"./resources/sass/detail.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\detail.scss */"./resources/sass/detail.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\cart.scss */"./resources/sass/cart.scss");
+module.exports = __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\order.scss */"./resources/sass/order.scss");
 
 
 /***/ })
