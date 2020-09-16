@@ -5,5 +5,11 @@
     "/css/category.css": "/css/category.css",
     "/css/detail.css": "/css/detail.css",
     "/css/cart.css": "/css/cart.css",
-    "/css/order.css": "/css/order.css"
+    "/css/order.css": "/css/order.css",
+    "/css/admin/login.css": "/css/admin/login.css",
+    "/css/admin/home.css": "/css/admin/home.css",
+    "/css/admin/order_list.css": "/css/admin/order_list.css",
+    "/css/admin/order_detail.css": "/css/admin/order_detail.css",
+    "/css/admin/item_list.css": "/css/admin/item_list.css",
+    "/css/admin/item_detail.css": "/css/admin/item_detail.css"
 }

@@ -1,28 +1,5 @@
 @charset "UTF-8";
 
-/* メイン */
-
-.main {
-  width: 1000px;
-  margin: 0 auto;
-  padding-bottom: 100px;
-}
-
-@media screen and (max-width: 1000px) {
-  .main {
-    width: 100%;
-    padding: 30px;
-  }
-}
-
-.topText {
-  margin-top: 50px;
-  padding-bottom: 5px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-}
-
 /* 進捗状況 */
 
 .flow {
@@ -85,6 +62,29 @@
   color: #6FAF77;
 }
 
+/* メイン */
+
+.main {
+  width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+.topText {
+  margin-top: 50px;
+  padding-bottom: 5px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
 /* ユーザー情報入力フォーム */
 
 .orderForm {
@@ -93,7 +93,7 @@
 }
 
 .orderForm table {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -130,6 +130,7 @@
 }
 
 .inputBtn {
+  width: 200px;
   display: block;
   color: #fff;
   text-align: center;
@@ -144,6 +145,7 @@
 }
 
 .backBtn {
+  width: 200px;
   display: block;
   color: #fff;
   text-align: center;
@@ -155,5 +157,123 @@
   margin-top: 20px;
   padding: 10px 50px;
   cursor: pointer;
+}
+
+/*入力内容確認*/
+
+/* アイテム一覧 */
+
+.itemList {
+  margin-top: 30px;
+}
+
+.itemList .delete {
+  color: #134DA2;
+  font-size: 1.2rem;
+}
+
+.itemList .text {
+  margin-bottom: 10px;
+}
+
+.itemList section {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.itemList section a:hover {
+  opacity: 0.7;
+}
+
+.itemList section .left {
+  width: 150px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.itemList section .left img {
+  width: 100%;
+}
+
+.itemList section .right {
+  width: 630px;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+.itemList section .right h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.itemList section .right h3 a {
+  text-decoration: none;
+  color: #333;
+}
+
+.itemList section .right .text {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.itemList section .right .price {
+  color: #F50101;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .itemList section .left {
+    width: 20%;
+  }
+
+  .itemList section .center {
+    width: 60%;
+  }
+
+  .itemList section .right {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .itemList section .left {
+    width: 30%;
+  }
+
+  .itemList section .center {
+    width: 70%;
+  }
+
+  .itemList section .right {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+.itemListBox {
+  margin-top: 100px;
+}
+
+/* 合計金額 */
+
+.totalPrice {
+  color: #F50101;
+  text-align: right;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* 完了画面 */
+
+.compMsg {
+  font-size: 2rem;
+  text-align: center;
 }
 

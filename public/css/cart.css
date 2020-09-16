@@ -1,5 +1,67 @@
 @charset "UTF-8";
 
+/* 進捗状況 */
+
+.flow {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.flow:before {
+  content: "";
+  width: 75%;
+  height: 4px;
+  background: #bfbab0;
+  position: absolute;
+  top: 20px;
+  left: 12.5%;
+  margin: 0;
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.flow li {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.flow li span:first-child {
+  display: block;
+  margin: 0 auto;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 100px;
+  background: #7e7973;
+  color: #fff;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.flow li span.text {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #645D52;
+}
+
+.flow li.active span:first-child {
+  background: #6faf77;
+}
+
+.flow li.active span.text {
+  color: #6FAF77;
+}
+
 /* メイン */
 
 .main {

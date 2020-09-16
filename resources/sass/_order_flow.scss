@@ -1,13 +1,62 @@
-$basicMainWidth :1000px;
+/* 進捗状況 */
+.flow{
+  width:600px;
+  margin:0 auto;
+  margin-top:50px;
+  margin-bottom:70px;
+  position: relative;
 
-$breakpoints: (
-'sm': 'screen and (max-width: 440px)',
-'md': 'screen and (max-width: 768px)',
-'xl': 'screen and (max-width: 1000px)',
-) !default;
+  &:before{
+    content: "";
+    width: 75%;
+    height: 4px;
+    background: #bfbab0;
+    position: absolute;
+    top: 20px;
+    left: 12.5%;
+    margin: 0;
+    border-radius: 2px;
+    z-index: -1;
+  }
 
-@mixin mq($breakpoint: xl) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-        @content;
+  li{
+    display: inline-block;
+    vertical-align: top;
+    width:25%;
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: bold;
+
+    span:first-child{
+      display: block;
+      margin:0 auto;
+      width:42px;
+      height:42px;
+      line-height:42px;
+      border-radius: 100px;
+      background: #7e7973;
+      color:#fff;
+      text-align:center;
+      font-size:2.4rem;
+      font-weight: bold;
     }
+
+    span.text{
+      display: block;
+      margin-top:10px;
+      font-size:1.8rem;
+      font-weight: bold;
+      color:#645D52;
+    }
+
+    &.active{
+      span:first-child{
+        background: #6faf77;
+      }
+
+      span.text{
+        color:#6FAF77
+      }
+    }
+  }
 }

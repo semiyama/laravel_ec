@@ -8,7 +8,7 @@
   <link href="{{ asset('/css/reset.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/common.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/cart.css') }}" rel="stylesheet">
-  <title>Laravel サンプルECサイト</title>
+  <title>カート｜Laravel サンプルECサイト</title>
 </head>
 <body>
   @include('header')

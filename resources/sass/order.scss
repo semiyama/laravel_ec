@@ -2,6 +2,7 @@
 @import "import";
 @import "order_flow";
 
+
 /* メイン */
 .main{
   width:$basicMainWidth;
@@ -22,68 +23,7 @@
   border-bottom:1px solid #ddd;
 }
 
-/* 進捗状況 */
-.flow{
-  width:600px;
-  margin:0 auto;
-  margin-top:50px;
-  margin-bottom:70px;
-  position: relative;
 
-  &:before{
-    content: "";
-    width: 75%;
-    height: 4px;
-    background: #bfbab0;
-    position: absolute;
-    top: 20px;
-    left: 12.5%;
-    margin: 0;
-    border-radius: 2px;
-    z-index: -1;
-  }
-
-  li{
-    display: inline-block;
-    vertical-align: top;
-    width:25%;
-    text-align: center;
-    font-size: 2.0rem;
-    font-weight: bold;
-
-    span:first-child{
-      display: block;
-      margin:0 auto;
-      width:42px;
-      height:42px;
-      line-height:42px;
-      border-radius: 100px;
-      background: #7e7973;
-      color:#fff;
-      text-align:center;
-      font-size:2.4rem;
-      font-weight: bold;
-    }
-
-    span.text{
-      display: block;
-      margin-top:10px;
-      font-size:1.8rem;
-      font-weight: bold;
-      color:#645D52;
-    }
-
-    &.active{
-      span:first-child{
-        background: #6faf77;
-      }
-
-      span.text{
-        color:#6FAF77
-      }
-    }
-  }
-}
 
 /* ユーザー情報入力フォーム */
 .orderForm{
@@ -91,7 +31,7 @@
   border-bottom:1px solid #ddd;
 
   table{
-    width:90%;
+    width:100%;
     margin:0 auto;
 
     tr{
@@ -129,6 +69,7 @@
 
 
 .inputBtn{
+  width:200px;
   display: block;
   color: #fff;
   text-align: center;
@@ -143,6 +84,7 @@
 }
 
 .backBtn{
+  width:200px;
   display: block;
   color: #fff;
   text-align: center;
@@ -154,4 +96,116 @@
   margin-top: 20px;
   padding: 10px 50px;
   cursor: pointer;
+}
+
+/*入力内容確認*/
+
+/* アイテム一覧 */
+.itemList{
+  margin-top:30px;
+
+  .delete{
+    color:#134DA2;
+    font-size:1.2rem;
+  }
+
+  .text{
+    margin-bottom:10px;
+  }
+
+  section{
+    padding:20px 0;
+    border-bottom:1px solid #ddd;
+
+    a:hover{
+      opacity: 0.7
+    }
+
+    .left{
+      width:150px;
+      display: inline-block;
+      vertical-align: top;
+
+      img{
+        width:100%;
+      }
+    }
+
+    .right{
+      width:630px;
+      display: inline-block;
+      vertical-align: top;
+      padding-left:20px;
+
+      h3{
+        font-size:2.0rem;
+        font-weight: bold;
+
+        a{
+          text-decoration: none;
+          color:#333
+        }
+      }
+
+      .text{
+        font-size:1.3rem;
+        margin-top:10px;
+      }
+
+      .price{
+        color:#F50101;
+        text-align: left;
+        font-size:1.6rem;
+        font-weight: bold;
+        margin-bottom:10px;
+      }
+    }
+
+
+    @include mq(xl) {
+        .left{
+          width:20%;
+        }
+        .center{
+          width:60%;
+        }
+        .right{
+          width:20%;
+        }
+    }
+
+    @include mq(md) {
+      .left{
+        width:30%;
+      }
+      .center{
+        width:70%;
+      }
+      .right{
+        width:100%;
+        display: block;
+        margin-top:20px;
+      }
+    }
+  }
+}
+
+.itemListBox{
+  margin-top:100px;
+}
+
+/* 合計金額 */
+.totalPrice{
+  color:#F50101;
+  text-align: right;
+  font-size:1.6rem;
+  font-weight: bold;
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+/* 完了画面 */
+.compMsg{
+  font-size:2.0rem;
+  text-align: center;
 }

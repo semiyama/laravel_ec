@@ -1,0 +1,44 @@
+html {
+  background: #f5f6f8;
+}
+
+header {
+  line-height: 60px;
+  background: #334454;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+form {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+form input[type=text] {
+  width: 100%;
+  line-height: 30px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+form button {
+  background: #608bc4;
+  width: 100%;
+  line-height: 40px;
+  margin: 0 auto;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+

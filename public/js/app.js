@@ -65881,6 +65881,72 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/sass/admin/home.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/admin/home.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/admin/item_detail.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/admin/item_detail.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/admin/item_list.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/admin/item_list.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/admin/login.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin/login.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/admin/order_detail.scss":
+/*!************************************************!*\
+  !*** ./resources/sass/admin/order_detail.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/admin/order_list.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/admin/order_list.scss ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/cart.scss":
 /*!**********************************!*\
   !*** ./resources/sass/cart.scss ***!
@@ -65948,9 +66014,9 @@ if (document.getElementById('example')) {
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/common.scss ./resources/sass/index.scss ./resources/sass/category.scss ./resources/sass/detail.scss ./resources/sass/cart.scss ./resources/sass/order.scss ***!
-  \***************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/common.scss ./resources/sass/index.scss ./resources/sass/category.scss ./resources/sass/detail.scss ./resources/sass/cart.scss ./resources/sass/order.scss ./resources/sass/admin/login.scss ./resources/sass/admin/home.scss ./resources/sass/admin/order_list.scss ./resources/sass/admin/order_detail.scss ./resources/sass/admin/item_list.scss ./resources/sass/admin/item_detail.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65960,7 +66026,13 @@ __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\index.sc
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\category.scss */"./resources/sass/category.scss");
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\detail.scss */"./resources/sass/detail.scss");
 __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\cart.scss */"./resources/sass/cart.scss");
-module.exports = __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\order.scss */"./resources/sass/order.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\order.scss */"./resources/sass/order.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\admin\login.scss */"./resources/sass/admin/login.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\admin\home.scss */"./resources/sass/admin/home.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\admin\order_list.scss */"./resources/sass/admin/order_list.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\admin\order_detail.scss */"./resources/sass/admin/order_detail.scss");
+__webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\admin\item_list.scss */"./resources/sass/admin/item_list.scss");
+module.exports = __webpack_require__(/*! C:\Users\shumai\laravel-app\shop\resources\sass\admin\item_detail.scss */"./resources/sass/admin/item_detail.scss");
 
 
 /***/ })
