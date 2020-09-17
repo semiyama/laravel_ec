@@ -64,8 +64,38 @@
             </td>
           </tr>
         </table>
+
+        <div class="clearBtnBox">
+          <a>検索条件をクリア</a>
+        </div>
+      </div>
+
+      <a class="searchBtn">検索する</a>
+
+      <div class="orderList">
+        <div>182件が該当</div>
+        <table>
+          <tr>
+            <th>受注日</th>
+            <th>注文ID</th>
+            <th>お名前</th>
+            <th>購入金額</th>
+            <th>ステータス</th>
+            <th></th>
+          </tr>
+
+          <tr>
+            <td>09/10</td>
+            <td>120</td>
+            <td>阪本周作</td>
+            <td>12,500</td>
+            <td>新規受付</td>
+            <td>編集</td>
+          </tr>
+        </table>
       </div>
     </div>
+
   </div>
 
   <!-- 左サイドバー -->

@@ -106,3 +106,52 @@ header {
   margin-left: 10px;
 }
 
+.main .container .searchPanel .clearBtnBox {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 30px;
+}
+
+.main .container .searchPanel .clearBtnBox a {
+  color: #2377ce;
+}
+
+.main .container .searchBtn {
+  width: 200px;
+  display: block;
+  background: #608bc4;
+  line-height: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.main .container .orderList {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #CCCCCC;
+  font-size: 1.6rem;
+}
+
+.main .container .orderList table {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.main .container .orderList table th,
+.main .container .orderList table td {
+  border: solid 1px #CCCCCC;
+  padding: 5px 20px;
+}
+
+.main .container .orderList table th {
+  background: #f6f6f6;
+}
+
