@@ -11,8 +11,6 @@ class CartController extends Controller
 
     /**
      * Display the Shopping cart.
-     *
-     * @param  \App\Item_category  $item_category
      * @return \Illuminate\Http\Response
      */
     public function cart()
@@ -22,8 +20,6 @@ class CartController extends Controller
 
     /**
      * Display the order form.
-     *
-     * @param  \App\Items  $items
      * @return \Illuminate\Http\Response
      */
      public function orderForm()
@@ -33,8 +29,6 @@ class CartController extends Controller
 
      /**
       * Display the order check.
-      *
-      * @param  \App\Items  $items
       * @return \Illuminate\Http\Response
       */
       public function orderCheck()
@@ -44,8 +38,6 @@ class CartController extends Controller
 
       /**
        * Display the order complete.
-       *
-       * @param  \App\Items  $items
        * @return \Illuminate\Http\Response
        */
        public function orderComp()
