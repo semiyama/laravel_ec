@@ -31,11 +31,28 @@
           <p class="description">{{$item->description}}</p>
           <div class="price">&yen; {{ number_format($item->price) }}（税込）</div>
           <form action="/cart/add" method="post">
-            {{ csrf_field() }}
+            <select name="num">
+              @for ($i = 1; $i <= 10; $i++)
+                  <option value="{{ $i }}">{{ $i }}</option>
+              @endfor
+            </select>
+            <br>
             <button>カゴに入れる</button>
+            {{ csrf_field() }}
+            <input type="hidden" name="itemId" value="{{$item->id}}">
           </form>
         </div>
       </section>
+
+      @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
     </div>
   </div>
 </body>

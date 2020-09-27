@@ -41,22 +41,33 @@
     </ul>
 
     <div class="itemList">
-      <section class="ibParent">
+      @php
+        $totalCost = 0;
+      @endphp
 
-        <div class="left">
-          <a href="/products/detail/1"><img src="http://127.0.0.1:8000/images/sample.jpg" alt="遠い太鼓（村上春樹）"></a>
-        </div>
+      @foreach ($cartItems as $val)
+        <section class="ibParent">
 
-        <div class="right">
-          <h3><a href="/products/detail/1">遠い太鼓（村上春樹）</a></h3>
-          <div class="price">6,600円</div>
-          <span class="delete">削除</span>
-        </div>
+          <div class="left">
+            <a href="/products/detail/1"><img src="/images/sample.jpg" alt="{{ $items[$val['itemId']]['name'] }}"></a>
+          </div>
 
-      </section>
+          <div class="right">
+            <h3><a href="/products/detail/1">{{ $items[$val['itemId']]['name'] }}</a></h3>
+            <div class="price">{{ $items[$val['itemId']]['price'] }}円</div>
+            <div class="num">{{ $val['num'] }}個</div>
+            <span class="delete">削除</span>
+          </div>
+
+        </section>
+
+        @php
+          $totalCost += $items[$val['itemId']]['price']
+        @endphp
+      @endforeach
     </div>
 
-    <div class="totalPrice">小計：13,200円</div>
+    <div class="totalPrice">小計：{{ number_format($totalCost) }}円</div>
 
     <form>
       <button class="inputBtn">レジに進む</button>

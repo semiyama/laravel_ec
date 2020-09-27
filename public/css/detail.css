@@ -52,9 +52,11 @@
 
 .item .right .price {
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 2.2rem;
   font-weight: bold;
   color: #F50101;
+  border-bottom: dotted 1px #ccc;
 }
 
 .item .right form button {
@@ -67,5 +69,11 @@
   margin-top: 20px;
   padding: 10px 50px;
   cursor: pointer;
+}
+
+.item .right form select {
+  height: 40px;
+  width: 100px;
+  font-size: 1.6rem;
 }
 

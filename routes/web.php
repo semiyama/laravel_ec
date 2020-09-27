@@ -30,6 +30,9 @@ Route::get('/products/detail/{id}', 'ItemController@detail')->name('detail');
 //カート
 Route::get('/cart', 'CartController@cart')->name('cart');
 
+//カート
+Route::post('/cart/add', 'CartController@cartAdd')->name('cart');
+
 //注文フォーム
 Route::get('/order', 'CartController@orderForm')->name('order');
 

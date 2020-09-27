@@ -148,6 +148,13 @@
   margin-bottom: 10px;
 }
 
+.itemList section .right .num {
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1000px) {
   .itemList section .left {
     width: 20%;
