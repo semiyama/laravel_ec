@@ -28,12 +28,13 @@
 /* ユーザー情報入力フォーム */
 .orderForm{
   padding-bottom:10px;
-  border-bottom:1px solid #ddd;
+  /*border-bottom:1px solid #ddd;*/
 
   table{
     width:100%;
     margin:0 auto;
-
+    border-bottom:1px solid #ddd;
+    
     tr{
       border-top:solid #ddd 1px;
     }

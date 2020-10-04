@@ -30,14 +30,17 @@ Route::get('/products/detail/{id}', 'ItemController@detail')->name('detail');
 //カート
 Route::get('/cart', 'CartController@cart')->name('cart');
 
-//カート
-Route::post('/cart/add', 'CartController@cartAdd')->name('cart');
+//カートに商品追加
+Route::post('/cart/add', 'CartController@cartAdd')->name('cart_add');
+
+//カートから商品削除
+Route::post('/cart/delete', 'CartController@cartDelete')->name('cart_delete');
 
 //注文フォーム
 Route::get('/order', 'CartController@orderForm')->name('order');
 
 //注文内容の確認
-Route::get('/order/check', 'CartController@orderCheck')->name('order_check');
+Route::post('/order/check', 'CartController@orderCheck')->name('order_check');
 
 //注文完了
 Route::get('/order/comp', 'CartController@orderComp')->name('order_comp');

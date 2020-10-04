@@ -6,6 +6,7 @@
 .main{
   width:$basicMainWidth;
   margin:0 auto;
+  padding-bottom:100px;
 
   @include mq(xl) {
       width:100%;
@@ -19,6 +20,16 @@
   font-size:1.8rem;
   font-weight: bold;
   border-bottom:1px solid #ddd;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* カート内に商品が無い時 */
+.noItem{
+  font-size:2.0rem;
+  text-align: center;
 }
 
 /* アイテム一覧 */

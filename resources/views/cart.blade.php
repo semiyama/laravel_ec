@@ -45,33 +45,43 @@
         $totalCost = 0;
       @endphp
 
-      @foreach ($cartItems as $val)
-        <section class="ibParent">
+      @if (!isset($cartItems) || count($cartItems) == 0)
+        <div class="noItem">カートに商品がありません。</div>
+      @else
+        @foreach ($cartItems as $k => $val)
+          <section class="ibParent">
 
-          <div class="left">
-            <a href="/products/detail/1"><img src="/images/sample.jpg" alt="{{ $items[$val['itemId']]['name'] }}"></a>
-          </div>
+            <div class="left">
+              <a href="/products/detail/1"><img src="/images/sample.jpg" alt="{{ $items[$val['itemId']]['name'] }}"></a>
+            </div>
 
-          <div class="right">
-            <h3><a href="/products/detail/1">{{ $items[$val['itemId']]['name'] }}</a></h3>
-            <div class="price">{{ $items[$val['itemId']]['price'] }}円</div>
-            <div class="num">{{ $val['num'] }}個</div>
-            <span class="delete">削除</span>
-          </div>
+            <div class="right">
+              <h3><a href="/products/detail/1">{{ $items[$val['itemId']]['name'] }}</a></h3>
+              <div class="price">{{ $items[$val['itemId']]['price'] }}円</div>
+              <div class="num">{{ $val['num'] }}個</div>
+              <form method="post" action="/cart/delete">
+                <button class="delete">削除</button>
+                <input type="hidden" name="timeStamp" value="{{ $val['timeStamp'] }}">
+                {{ csrf_field() }}
+              </form>
+            </div>
 
-        </section>
+          </section>
 
-        @php
-          $totalCost += $items[$val['itemId']]['price']
-        @endphp
-      @endforeach
+          @php
+            $totalCost += $items[$val['itemId']]['price'] * $val['num'];
+          @endphp
+        @endforeach
+      @endif
+
+
     </div>
 
-    <div class="totalPrice">小計：{{ number_format($totalCost) }}円</div>
+    @if (isset($cartItems) && 0 < count($cartItems))
+      <div class="totalPrice">小計：{{ number_format($totalCost) }}円</div>
 
-    <form>
-      <button class="inputBtn">レジに進む</button>
-    </form>
+      <a href="/order"><button class="inputBtn">レジに進む</button></a>
+    @endif
 
   </div>
 </body>

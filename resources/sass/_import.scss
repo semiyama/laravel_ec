@@ -1,5 +1,11 @@
 $basicMainWidth :1000px;
 
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
 $breakpoints: (
 'sm': 'screen and (max-width: 440px)',
 'md': 'screen and (max-width: 768px)',
