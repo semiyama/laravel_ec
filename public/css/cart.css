@@ -6154,6 +6154,12 @@ readers do not read off random characters that represent icons */
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .flow {
+    width: 100%;
+  }
+}
+
 .flow:before {
   content: "";
   width: 75%;

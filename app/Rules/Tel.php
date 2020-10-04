@@ -4,8 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-
-class JapaneseZip implements Rule
+class Tel implements Rule
 {
     /**
      * Create a new rule instance.
@@ -26,7 +25,7 @@ class JapaneseZip implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match("/^[0-9]{3}-?[0-9]{4}$/", $value);
+        return preg_match('/^[0-9]+\-?[0-9]+\-?[0-9]{4}$/', $value);
     }
 
     /**
@@ -36,6 +35,6 @@ class JapaneseZip implements Rule
      */
     public function message()
     {
-        return '郵便番号を正しい形式でご入力下さい。';
+      return '電話番号を正しい形式でご入力下さい。';
     }
 }

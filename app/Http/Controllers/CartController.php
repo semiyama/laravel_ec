@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Item_category;
 use App\Items;
 use Illuminate\Http\Request;
-use App\Rules\japaneseZip;
+use App\Http\Requests\OrderValidateRequest;
 
 class CartController extends Controller
 {
@@ -89,8 +89,7 @@ class CartController extends Controller
      */
      public function orderForm(Request $request)
      {
-       //dump($errors);
-       dump($request->zip);
+
 
        return view('order');
      }
@@ -99,43 +98,9 @@ class CartController extends Controller
       * Display the order check.
       * @return \Illuminate\Http\Response
       */
-      public function orderCheck(Request $request)
+      public function orderCheck(OrderValidateRequest $request)
       {
-
-        $formParams = [];
-        $formParams['name'] = $request->name;
-        $formParams['name_kana'] = $request->name_kana;
-        $formParams['zip'] = $request->zip;
-        $formParams['pref'] = $request->pref;
-        $formParams['address1'] = $request->address1;
-        $formParams['address2'] = $request->address2;
-        $formParams['tel'] = $request->tel;
-        $formParams['email'] = $request->email;
-
-        // validation
-        $rules = [
-            'name' => ['required'],
-            'name_kana' => ['required'],
-            'zip' => ['required', new JapaneseZip],
-            'pref' => ['required'],
-            'address1' => ['required'],
-            'address2' => ['required'],
-            'tel' => ['required'],
-            'email' => ['required']
-        ];
-
-        $errMsg = [
-          'name.required' => 'お名前は必須項目です。',
-          'name_kana.required'  => 'お名前（カナ）は必須項目です。',
-          'zip.required'  => '郵便番号は必須項目です。',
-          'pref.required'  => '都道府県は必須項目です。',
-          'address1.required'  => '住所1は必須項目です。',
-          'address2.required'  => '住所2は必須項目です。',
-          'tel.required'  => '電話番号は必須項目です。',
-          'email.required'  => 'メールアドレスは必須項目です。'
-        ];
-
-        $this->validate($request, $rules, $errMsg);
+        
 
         return view('order_check');
       }

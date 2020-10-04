@@ -47,7 +47,7 @@
           <td class="name">
             <input type="text" name="name" value="{{ old('name') }}">
             @if ($errors->has('name'))
-              <span>{{ $errors->first('name') }}</span>
+              <span class="error">{{ $errors->first('name') }}</span>
             @endif
           </td>
         </tr>
@@ -55,31 +55,75 @@
           <th>お名前（フリガナ）</th>
           <td>
             <input type="text" name="name_kana" value="{{ old('name_kana') }}">
+            @if ($errors->has('name_kana'))
+              <span class="error">{{ $errors->first('name_kana') }}</span>
+            @endif
           </td>
         </tr>
         <tr>
-          <th>住所</th>
+          <th>郵便番号</th>
           <td>
-            〒<input type="text" name="zip" class="zip" value="{{ old('zip') }}"><br><br>
+            〒<input type="text" name="zip" class="zip" value="{{ old('zip') }}">
+            @if ($errors->has('zip'))
+              <span class="error">{{ $errors->first('zip') }}</span>
+            @endif
+          </td>
+        </tr>
+
+        <tr>
+          <th>都道府県</th>
+          <td>
             <select name="pref">
-              <option>選択してください</option>
+              <option value="">選択してください</option>
+              @foreach(config('pref') as $k => $val)
+                  <option value="{{ $k }}" @if (old('pref') == $k) selected @endif>{{ $val }}</option>
+              @endforeach
             </select>
-            <br><br>
-            <input type="text" name="address1" value="{{ old('address1') }}"><br><br>
+            @if ($errors->has('pref'))
+              <span class="error">{{ $errors->first('pref') }}</span>
+            @endif
+          </td>
+        </tr>
+
+        <tr>
+          <th>市区郡町村・番地</th>
+          <td>
+            <input type="text" name="address1" value="{{ old('address1') }}">
+            @if ($errors->has('address1'))
+              <span class="error">{{ $errors->first('address1') }}</span>
+            @endif
+          </td>
+        </tr>
+
+        <tr>
+          <th>建物名</th>
+          <td>
             <input type="text" name="address2" value="{{ old('address2') }}">
           </td>
         </tr>
+
         <tr>
           <th>電話番号</th>
           <td>
             <input type="text" name="tel" value="{{ old('tel') }}">
+            @if ($errors->has('tel'))
+              <span class="error">{{ $errors->first('tel') }}</span>
+            @endif
           </td>
         </tr>
+
         <tr>
           <th>メールアドレス</th>
           <td>
-            <input type="text" name="email" value="{{ old('email') }}"><br><br>
+            <input type="text" name="email" value="{{ old('email') }}">
+            @if ($errors->has('email'))
+              <span class="error">{{ $errors->first('email') }}</span>
+            @endif
+            <br><br>
             <input type="text" name="email2" value="{{ old('email2') }}">
+            @if ($errors->has('email2'))
+              <span class="error">{{ $errors->first('email2') }}</span>
+            @endif
           </td>
         </tr>
       </table>
@@ -88,10 +132,6 @@
       <button class="backBtn">戻る</button>
       {{ csrf_field() }}
     </form>
-
-    @php
-     dd($errors->first('zip'));
-    @endphp
 
   </div>
 </body>

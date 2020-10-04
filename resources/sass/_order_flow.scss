@@ -1,3 +1,4 @@
+
 /* 進捗状況 */
 .flow{
   width:600px;
@@ -5,6 +6,10 @@
   margin-top:50px;
   margin-bottom:70px;
   position: relative;
+
+    @include mq(md) {
+      width:100%;
+    }
 
   &:before{
     content: "";
