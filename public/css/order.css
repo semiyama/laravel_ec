@@ -6286,6 +6286,10 @@ readers do not read off random characters that represent icons */
   margin-left: 5px;
 }
 
+.orderForm a {
+  text-decoration: none;
+}
+
 .inputBtn {
   width: 200px;
   display: block;
@@ -6376,6 +6380,13 @@ readers do not read off random characters that represent icons */
 
 .itemList section .right .price {
   color: #F50101;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.itemList section .right .num {
   text-align: left;
   font-size: 1.6rem;
   font-weight: bold;

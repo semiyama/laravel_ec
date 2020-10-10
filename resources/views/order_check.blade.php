@@ -46,65 +46,116 @@
           <tr>
             <th>お名前</th>
             <td class="name">
-              〇〇
+              {{$formParams['name']}}
             </td>
           </tr>
           <tr>
             <th>お名前（フリガナ）</th>
             <td>
-              〇〇
+              {{$formParams['name_kana']}}
             </td>
           </tr>
+
           <tr>
-            <th>住所</th>
+            <th>郵便番号</th>
             <td>
-              〒〇〇<br><br>
-              〇〇
-              <br><br>
-              〇〇<br><br>
-              〇〇
+              〒{{$formParams['zip']}}
             </td>
           </tr>
+
+          <tr>
+            <th>都道府県</th>
+            <td>
+              @php
+                $prefArr = config('pref');
+              @endphp
+              {{$prefArr[$formParams['pref']]}}
+            </td>
+          </tr>
+
+          <tr>
+            <th>市区郡町村・番地</th>
+            <td>
+              {{$formParams['address1']}}
+            </td>
+          </tr>
+
+          <tr>
+            <th>建物名（任意）</th>
+            <td>
+              {{$formParams['address2']}}
+            </td>
+          </tr>
+
           <tr>
             <th>電話番号</th>
             <td>
-              〇〇
+              {{$formParams['tel']}}
             </td>
           </tr>
           <tr>
             <th>メールアドレス</th>
             <td>
-              〇〇
+              {{$formParams['email']}}
             </td>
           </tr>
         </table>
       </form>
     </section>
 
-    <section class="itemListBox">
-      <h2 class="topText">商品</h2>
-      <div class="itemList">
-        <section class="ibParent">
 
-          <div class="left">
-            <a href="/products/detail/1"><img src="http://127.0.0.1:8000/images/sample.jpg" alt="遠い太鼓（村上春樹）"></a>
-          </div>
+    <section>
+      <h2 class="topText">商品リスト</h2>
+        <div class="itemList">
+          @php
+            $totalCost = 0;
+          @endphp
 
-          <div class="right">
-            <h3><a href="/products/detail/1">遠い太鼓（村上春樹）</a></h3>
-            <div class="price">6,600円</div>
-          </div>
+          @if (!isset($cartItems) || count($cartItems) == 0)
+            <div class="noItem">カートに商品がありません。</div>
+          @else
+            @foreach ($cartItems as $k => $val)
+              <section class="ibParent">
 
-        </section>
-      </div>
+                <div class="left">
+                  <a href="/products/detail/1"><img src="/images/sample.jpg" alt="{{ $items[$val['itemId']]['name'] }}"></a>
+                </div>
 
-      <div class="totalPrice">小計：13,200円</div>
+                <div class="right">
+                  <h3><a href="/products/detail/1">{{ $items[$val['itemId']]['name'] }}</a></h3>
+                  <div class="price">{{ $items[$val['itemId']]['price'] }}円</div>
+                  <div class="num">{{ $val['num'] }}個</div>
+                </div>
+
+              </section>
+
+              @php
+                $totalCost += $items[$val['itemId']]['price'] * $val['num'];
+              @endphp
+            @endforeach
+          @endif
+
+
+        </div>
+
+        @if (isset($cartItems) && 0 < count($cartItems))
+          <div class="totalPrice">小計：{{ number_format($totalCost) }}円</div>
+        @endif
     </section>
 
-
-    <form>
-      <button class="inputBtn">注文する</button>
-      <button class="backBtn">戻る</button>
+    <form method="post" action="/order/comp" class="orderForm">
+      <button class="inputBtn" name="submit" value="send">注文する</button>
+      <button class="backBtn" name="submit" value="back">戻る</button>
+      {{ csrf_field() }}
+      <input name="name" value="{{$formParams['name']}}" type="hidden">
+      <input name="name_kana" value="{{$formParams['name_kana']}}" type="hidden">
+      <input name="zip" value="{{$formParams['zip']}}" type="hidden">
+      <input name="pref" value="{{$formParams['pref']}}" type="hidden">
+      <input name="address1" value="{{$formParams['address1']}}" type="hidden">
+      <input name="address2" value="{{$formParams['address2']}}" type="hidden">
+      <input name="tel" value="{{$formParams['tel']}}" type="hidden">
+      <input name="email" value="{{$formParams['email']}}" type="hidden">
+      <input name="email2" value="{{$formParams['email2']}}" type="hidden">
     </form>
 
   </div>

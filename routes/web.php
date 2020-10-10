@@ -43,7 +43,7 @@ Route::get('/order', 'CartController@orderForm')->name('order');
 Route::post('/order/check', 'CartController@orderCheck')->name('order_check');
 
 //注文完了
-Route::get('/order/comp', 'CartController@orderComp')->name('order_comp');
+Route::post('/order/comp', 'CartController@orderComp')->name('order_comp');
 
 //管理画面ログイン
 Route::get('/admin/login', 'adminController@login')->name('admin_login');

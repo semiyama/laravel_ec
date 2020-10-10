@@ -17,7 +17,6 @@ class CartController extends Controller
     public function cart(Request $request)
     {
       //カートに入っている商品のデータをモデルから取得
-
       $temp = Items::all();
 
       $items = [];
@@ -89,7 +88,8 @@ class CartController extends Controller
      */
      public function orderForm(Request $request)
      {
-
+       //注文フォーム入力内容をセッションから削除
+       $request->session()->forget('formParams');
 
        return view('order');
      }
@@ -100,18 +100,44 @@ class CartController extends Controller
       */
       public function orderCheck(OrderValidateRequest $request)
       {
-        
+        $formParams = [];
+        $formParams['name'] = $request->name;
+        $formParams['name_kana'] = $request->name_kana;
+        $formParams['zip'] = $request->zip;
+        $formParams['pref'] = $request->pref;
+        $formParams['address1'] = $request->address1;
+        $formParams['address2'] = $request->address2;
+        $formParams['tel'] = $request->tel;
+        $formParams['email'] = $request->email;
+        $formParams['email2'] = $request->email2;
 
-        return view('order_check');
+        //カートに入っている商品のデータをモデルから取得
+        $temp = Items::all();
+
+        $items = [];
+        foreach($temp as $val){
+          $items[$val['id']] = $val;
+        }
+
+        return view('order_check', ['formParams' => $formParams, 'items' => $items, 'cartItems' => $request->session()->get('cart')]);
       }
 
       /**
        * Display the order complete.
        * @return \Illuminate\Http\Response
        */
-       public function orderComp()
+       public function orderComp(request $request)
        {
-         return view('order_comp');
+
+         $formParams = $request->session()->get('formParams');
+
+         if($request->submit == 'send'){
+           return view('order_comp');
+         }
+         elseif($request->submit == 'back'){
+           return redirect('/order')->withInput();
+         }
+
        }
 
 }

@@ -96,7 +96,7 @@
         </tr>
 
         <tr>
-          <th>建物名</th>
+          <th>建物名（任意）</th>
           <td>
             <input type="text" name="address2" value="{{ old('address2') }}">
           </td>
@@ -129,7 +129,7 @@
       </table>
 
       <button class="inputBtn">次へ</button>
-      <button class="backBtn">戻る</button>
+      <a href="/cart"><button type="button" class="backBtn">戻る</button></a>
       {{ csrf_field() }}
     </form>
 
