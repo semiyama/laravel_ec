@@ -99,6 +99,12 @@
               {{$formParams['email']}}
             </td>
           </tr>
+          <tr>
+            <th>備考欄</th>
+            <td>
+              {{$formParams['memo']}}
+            </td>
+          </tr>
         </table>
       </form>
     </section>
@@ -156,6 +162,7 @@
       <input name="tel" value="{{$formParams['tel']}}" type="hidden">
       <input name="email" value="{{$formParams['email']}}" type="hidden">
       <input name="email2" value="{{$formParams['email2']}}" type="hidden">
+      <input name="memo" value="{{$formParams['memo']}}" type="hidden">
     </form>
 
   </div>

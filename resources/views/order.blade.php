@@ -126,6 +126,13 @@
             @endif
           </td>
         </tr>
+
+        <tr>
+          <th>備考欄</th>
+          <td>
+            <textarea name="memo">{{ old('memo') }}</textarea>
+          </td>
+        </tr>
       </table>
 
       <button class="inputBtn">次へ</button>

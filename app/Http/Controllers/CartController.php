@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Item_category;
 use App\Items;
+use App\Order_item;
+use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrderValidateRequest;
 
@@ -100,6 +102,10 @@ class CartController extends Controller
       */
       public function orderCheck(OrderValidateRequest $request)
       {
+
+        $formParams = $request->all();
+
+        /*
         $formParams = [];
         $formParams['name'] = $request->name;
         $formParams['name_kana'] = $request->name_kana;
@@ -109,7 +115,7 @@ class CartController extends Controller
         $formParams['address2'] = $request->address2;
         $formParams['tel'] = $request->tel;
         $formParams['email'] = $request->email;
-        $formParams['email2'] = $request->email2;
+        $formParams['email2'] = $request->email2;*/
 
         //カートに入っている商品のデータをモデルから取得
         $temp = Items::all();
@@ -128,10 +134,53 @@ class CartController extends Controller
        */
        public function orderComp(request $request)
        {
+         //$formParams = [];
 
-         $formParams = $request->session()->get('formParams');
+         $formParams = $request->all();
+
+/*
+         $formParams['name'] = $request->name;
+         $formParams['name_kana'] = $request->name_kana;
+         $formParams['zip'] = $request->zip;
+         $formParams['pref'] = $request->pref;
+         $formParams['address1'] = $request->address1;
+         $formParams['address2'] = $request->address2;
+         $formParams['tel'] = $request->tel;
+         $formParams['email'] = $request->email;
+         $formParams['email2'] = $request->email2;
+         $formParams['memo'] = $request->memo;
+*/
 
          if($request->submit == 'send'){
+
+           $order = new Order;
+           $order->name = $formParams['name'];
+           $order->name_kana = $formParams['name_kana'];
+           $order->zip = $formParams['zip'];
+           $order->pref = $formParams['pref'];
+           $order->address1 = $formParams['address1'];
+           $order->address2 = $formParams['address2'];
+           $order->tel = $formParams['tel'];
+           $order->email = $formParams['email'];
+           $order->memo = $formParams['memo'];
+
+           //開発中。とりあえず０
+           $order->deliv_price = 0;
+
+           $order->save();
+
+           /*
+           Order::create([
+             'name' => $formParams['name'],
+             'name_kana' => $formParams['name_kana'],
+             'zip' => $formParams['zip'],
+             'address1' => $formParams['address1'],
+             'address2' => $formParams['address2'],
+             'tel' => $formParams['tel'],
+             'email' => $formParams['email']
+           ]);
+           */
+
            return view('order_comp');
          }
          elseif($request->submit == 'back'){
