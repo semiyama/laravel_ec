@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Item_category;
 use App\Items;
 use App\Order_item;
@@ -90,8 +91,12 @@ class CartController extends Controller
      */
      public function orderForm(Request $request)
      {
-       //注文フォーム入力内容をセッションから削除
-       $request->session()->forget('formParams');
+
+       //カートのセッションに商品データが無い場合、カートにリダイレクト
+       $cartItems = $request->session()->get('cart');
+       if(!is_array($cartItems) || count($cartItems) == 0){
+         return redirect('/cart');
+       }
 
        return view('order');
      }
@@ -103,19 +108,13 @@ class CartController extends Controller
       public function orderCheck(OrderValidateRequest $request)
       {
 
-        $formParams = $request->all();
+        //カートのセッションに商品データが無い場合、カートにリダイレクト
+        $cartItems = $request->session()->get('cart');
+        if(!is_array($cartItems) || count($cartItems) == 0){
+          return redirect('/cart');
+        }
 
-        /*
-        $formParams = [];
-        $formParams['name'] = $request->name;
-        $formParams['name_kana'] = $request->name_kana;
-        $formParams['zip'] = $request->zip;
-        $formParams['pref'] = $request->pref;
-        $formParams['address1'] = $request->address1;
-        $formParams['address2'] = $request->address2;
-        $formParams['tel'] = $request->tel;
-        $formParams['email'] = $request->email;
-        $formParams['email2'] = $request->email2;*/
+        $formParams = $request->all();
 
         //カートに入っている商品のデータをモデルから取得
         $temp = Items::all();
@@ -134,54 +133,70 @@ class CartController extends Controller
        */
        public function orderComp(request $request)
        {
-         //$formParams = [];
+
+         //カートのセッションに商品データが無い場合、カートにリダイレクト
+         $cartItems = $request->session()->get('cart');
+         if(!is_array($cartItems) || count($cartItems) == 0){
+           return redirect('/cart');
+         }
 
          $formParams = $request->all();
 
-/*
-         $formParams['name'] = $request->name;
-         $formParams['name_kana'] = $request->name_kana;
-         $formParams['zip'] = $request->zip;
-         $formParams['pref'] = $request->pref;
-         $formParams['address1'] = $request->address1;
-         $formParams['address2'] = $request->address2;
-         $formParams['tel'] = $request->tel;
-         $formParams['email'] = $request->email;
-         $formParams['email2'] = $request->email2;
-         $formParams['memo'] = $request->memo;
-*/
-
          if($request->submit == 'send'){
 
-           $order = new Order;
-           $order->name = $formParams['name'];
-           $order->name_kana = $formParams['name_kana'];
-           $order->zip = $formParams['zip'];
-           $order->pref = $formParams['pref'];
-           $order->address1 = $formParams['address1'];
-           $order->address2 = $formParams['address2'];
-           $order->tel = $formParams['tel'];
-           $order->email = $formParams['email'];
-           $order->memo = $formParams['memo'];
+           $result = DB::transaction(function () use ($cartItems, $formParams) {
+             $order = new Order;
+             $order->name = $formParams['name'];
+             $order->name_kana = $formParams['name_kana'];
+             $order->zip = $formParams['zip'];
+             $order->pref = $formParams['pref'];
+             $order->address1 = $formParams['address1'];
+             $order->address2 = $formParams['address2'];
+             $order->tel = $formParams['tel'];
+             $order->email = $formParams['email'];
+             $order->memo = $formParams['memo'];
 
-           //開発中。とりあえず０
-           $order->deliv_price = 0;
+             //開発中。とりあえず０
+             $order->deliv_price = 0;
 
-           $order->save();
+             //注文テーブルに書き込み
+             $result1 = $order->save();
 
-           /*
-           Order::create([
-             'name' => $formParams['name'],
-             'name_kana' => $formParams['name_kana'],
-             'zip' => $formParams['zip'],
-             'address1' => $formParams['address1'],
-             'address2' => $formParams['address2'],
-             'tel' => $formParams['tel'],
-             'email' => $formParams['email']
-           ]);
-           */
+             //直前に書き込んだ注文データのIDを取得
+             $lastInsertId = $order->id;
 
-           return view('order_comp');
+             //商品テーブルのデータ取得
+             $temp = Items::all();
+             $items = [];
+             foreach($temp as $val){
+               $items[$val['id']] = $val;
+             }
+
+             foreach($cartItems as $k => $val){
+               $itemId = $val['itemId'];
+               $orderItem = new Order_item;
+               $orderItem->order_id = $lastInsertId;
+               $orderItem->item_id = $itemId;
+               $orderItem->price = $items[$itemId]['price'];
+               $orderItem->num = $val['num'];
+               $result2 = $orderItem->save();
+             }
+
+             //注文テーブル、注文アイテムテーブルの書き込みが両方成功
+             if($result1 && $result2){
+               return true;
+             }else{
+               return false;
+             }
+           });
+
+           if($result){
+              return view('order_comp');
+           }else{
+             return redirect('/cart');
+           }
+
+
          }
          elseif($request->submit == 'back'){
            return redirect('/order')->withInput();
