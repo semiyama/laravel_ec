@@ -150,7 +150,7 @@ class CartController extends Controller
 
          if($request->submit == 'send'){
 
-           $result = DB::transaction(function () use ($cartItems, $formParams) {
+           $return = DB::transaction(function () use ($cartItems, $formParams) {
              $order = new Order;
              $order->name = $formParams['name'];
              $order->name_kana = $formParams['name_kana'];
@@ -190,15 +190,22 @@ class CartController extends Controller
 
              //注文テーブル、注文アイテムテーブルの書き込みが両方成功
              if($result1 && $result2){
-               return true;
+               $return['lastInsertId'] = $lastInsertId;
+               $return['saveResult'] = true;
+               return $return;
              }else{
-               return false;
+              $return['lastInsertId'] = '';
+              $return['saveResult'] = false;
+              return $return;
              }
            });
 
-           if($result){
+           if($return['saveResult']){
+             //カートのセッションを削除
              $request->session()->forget('cart');
-              return view('order_comp');
+
+             //注文完了画面を表示
+              return view('order_comp', ['orderId' => $return['lastInsertId']]);
            }else{
              return redirect('/cart');
            }
