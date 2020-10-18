@@ -191,6 +191,7 @@ class CartController extends Controller
            });
 
            if($result){
+             $request->session()->forget('cart');
               return view('order_comp');
            }else{
              return redirect('/cart');
