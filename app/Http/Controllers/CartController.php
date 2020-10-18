@@ -92,6 +92,8 @@ class CartController extends Controller
      public function orderForm(Request $request)
      {
 
+      header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+
        //カートのセッションに商品データが無い場合、カートにリダイレクト
        $cartItems = $request->session()->get('cart');
        if(!is_array($cartItems) || count($cartItems) == 0){
@@ -107,6 +109,8 @@ class CartController extends Controller
       */
       public function orderCheck(OrderValidateRequest $request)
       {
+        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+
 
         //カートのセッションに商品データが無い場合、カートにリダイレクト
         $cartItems = $request->session()->get('cart');
@@ -133,6 +137,8 @@ class CartController extends Controller
        */
        public function orderComp(request $request)
        {
+
+        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 
          //カートのセッションに商品データが無い場合、カートにリダイレクト
          $cartItems = $request->session()->get('cart');
