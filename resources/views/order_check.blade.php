@@ -114,7 +114,8 @@
       <h2 class="topText">商品リスト</h2>
         <div class="itemList">
           @php
-            $totalCost = 0;
+            $totalItemCost = 0;
+            $totalTax = 0;
           @endphp
 
           @if (!isset($cartItems) || count($cartItems) == 0)
@@ -136,7 +137,8 @@
               </section>
 
               @php
-                $totalCost += $items[$val['itemId']]['price'] * $val['num'];
+                $totalItemCost += $items[$val['itemId']]['price'] * $val['num'];
+                
               @endphp
             @endforeach
           @endif
@@ -144,8 +146,24 @@
 
         </div>
 
+
+        @php
+          if($formParams['pref'] == 47){
+            $delivPrice = 3000;
+          }else{
+            $delivPrice = 1000;
+          }
+
+          $totalTax = floor(($totalItemCost + $delivPrice) * config('const.TAX'));
+        @endphp
+
         @if (isset($cartItems) && 0 < count($cartItems))
-          <div class="totalPrice">小計：{{ number_format($totalCost) }}円</div>
+          <div class="totalPrice">
+            小計：{{ number_format($totalItemCost) }}円<br>
+            送料：{{ number_format($delivPrice) }}<br>
+            消費税：{{ number_format($totalTax) }}円<br>
+            合計：{{ number_format($totalItemCost + $delivPrice + $totalTax) }}円
+          </div>
         @endif
     </section>
 

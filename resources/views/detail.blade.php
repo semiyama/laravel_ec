@@ -29,7 +29,7 @@
         <div class="right">
           <h2>{{$item->name}}</h2>
           <p class="description">{{$item->description}}</p>
-          <div class="price">&yen; {{ number_format($item->price) }}（税込）</div>
+          <div class="price">&yen; {{ number_format($item->price) }}（税抜）</div>
           <form action="/cart/add" method="post">
             <select name="num">
               @for ($i = 1; $i <= 10; $i++)

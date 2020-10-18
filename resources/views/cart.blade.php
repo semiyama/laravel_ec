@@ -43,6 +43,7 @@
     <div class="itemList">
       @php
         $totalCost = 0;
+        $totalTax = 0;
       @endphp
 
       @if (!isset($cartItems) || count($cartItems) == 0)
@@ -70,6 +71,7 @@
 
           @php
             $totalCost += $items[$val['itemId']]['price'] * $val['num'];
+            $totalTax += floor(($items[$val['itemId']]['price'] * $val['num']) * config('const.TAX'));
           @endphp
         @endforeach
       @endif
@@ -78,7 +80,11 @@
     </div>
 
     @if (isset($cartItems) && 0 < count($cartItems))
-      <div class="totalPrice">小計：{{ number_format($totalCost) }}円</div>
+      <div class="totalPrice">
+        小計：{{ number_format($totalCost) }}円<br>
+        消費税：{{ number_format($totalTax) }}円<br>
+        合計：{{ number_format($totalCost + $totalTax) }}円
+      </div>
 
       <a href="/order"><button class="inputBtn">レジに進む</button></a>
     @endif

@@ -162,8 +162,13 @@ class CartController extends Controller
              $order->email = $formParams['email'];
              $order->memo = $formParams['memo'];
 
-             //開発中。とりあえず０
-             $order->deliv_price = 0;
+             //沖縄
+             if($formParams['pref'] == 47){
+              $delivPrice = 3000;
+             }else{
+              $delivPrice = 1000;
+             }
+             $order->deliv_price = $delivPrice;
 
              //注文テーブルに書き込み
              $result1 = $order->save();

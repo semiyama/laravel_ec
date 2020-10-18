@@ -36,7 +36,7 @@
           </div>
           {{--右ブロック--}}
           <div class="right">
-            <div class="price">&yen; {{ number_format($item->price) }}（税込）</div>
+            <div class="price">&yen; {{ number_format($item->price) }}（税抜）</div>
             <a href="/products/detail/{{$item->id}}">詳細を見る</a>
           </div>
         </section>
